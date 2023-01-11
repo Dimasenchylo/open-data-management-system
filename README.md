@@ -4,10 +4,8 @@
 
 ### Виконали:
 
-* Євгеній Семиволос (telegram: [e_semivolos](https://t.me/e_semivolos))
-* Володимир Андріященко (telegram: [lekoaaa](https://t.me/lekoaaa))
-* Михайло Ватажко (telegram: [mmishav](https://t.me/mmishav))
-* Андрій Щегель (telegram: [SolarUlt](https://t.me/SolarUlt))
+
 * Дмитро Сенчило (telegram: [senchylo](https://t.me/senchylo))
 
-**[Посилання на проект](https://eugenesemivolos.github.io/open-data-management-system/)**
+
+**[Посилання на проект](https://dimasenchylo.github.io/open-data-management-system/)**

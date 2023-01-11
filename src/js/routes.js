@@ -2,7 +2,7 @@ const { Router, query } = require("express");
 const mysql = require('mysql2/promise');
 const { extend } = require('lodash');
 
-const connectionUrl = 'mysql://root:@localhost:3306/opendatamanagementsystem';
+const connectionUrl = 'mysql://root:@localhost:3306/imbaza';
 
 const sql = {
   createUser: `INSERT INTO USER(ID, USERNAME, EMAIL, PASSWORD, AVATAR, DONATE_ID, ROLE_ID) VALUES (:id, :username, :email, :password, :avatar, :donate_id, :role_id)`,
@@ -18,7 +18,7 @@ const executeSQL = async (query, values) => {
   try {
     connection = await mysql.createConnection({
       uri: connectionUrl,
-      password: 'Pro100jeka$',
+      password: '1234567890',
       namedPlaceholders: true
     });
 
