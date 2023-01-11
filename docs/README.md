@@ -3,13 +3,13 @@ home: true
 actionText: Розпочати →
 actionLink: /intro/
 
-footer: "ECL 2.0 Licensed | Copyright © [2022] [Євгеній Семиволос]"
+footer: "ECL 2.0 Licensed | Copyright © [2022] [Сенчило Дмитро]"
 ---
 
 
 **Виконав:** 
 
-*студент 2-го курсу, групи ІМ-11*<span padding-right:5em></span> **Євгеній Семиволос (telegram: [e_semivolos](https://t.me/e_semivolos))**
+*студент 2-го курсу, групи ІМ-11*<span padding-right:5em></span> **Дмитро Сенчило (telegram: [@senchylo](https://t.me/e_semivolos))**
 
 **Керівник**
 
