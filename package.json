@@ -4,7 +4,7 @@
   "main": "index.js",
   "description": "Open data management system",
   "repository": "https://github.com/Dimasenchylo/open-data-management-system",
-  "author": "Yevhenii Semyvolos <semivolos.evgen1@gmail.com>",
+  "author": "Dmytro Senchylo <dimasenchylo207@gmail.com>",
   "license": "ECL 2.0",
   "scripts": {
     "docs:dev": "npx vuepress dev docs",

@@ -265,14 +265,14 @@ COMMIT;
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const port = 5000;
+const port = 7777;
 
 const app = express();
 
 app.use(bodyParser.text());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use('/user', require('./routes'));
+app.use('/Donate', require('./routes'));
 
 app.listen(port, () => {
   console.log(`Server started on http://localhost:${port}`);
@@ -286,14 +286,14 @@ const { Router, query } = require("express");
 const mysql = require('mysql2/promise');
 const { extend } = require('lodash');
 
-const connectionUrl = 'mysql://root:@localhost:3306/opendatamanagementsystem';
+const connectionUrl = 'mysql://root:@localhost:3306/imbaza';
 
 const sql = {
-  createUser: `INSERT INTO USER(ID, USERNAME, EMAIL, PASSWORD, AVATAR, DONATE_ID, ROLE_ID) VALUES (:id, :username, :email, :password, :avatar, :donate_id, :role_id)`,
-  readUserByID: `SELECT * FROM USER WHERE ID= :id`,
-  readAllUser: `SELECT * FROM USER`,
-  updateUserByID: `UPDATE USER SET USERNAME= :username, EMAIL= :email, PASSWORD= :password, AVATAR= :avatar, DONATE_ID= donate_id, ROLE_ID= :role_id WHERE ID= :id`,
-  deleteUserByID: `DELETE FROM USER WHERE ID= :id`,
+  createDonate: `INSERT INTO DONATE(ID, CARD, OWNER) VALUES (:id, :card, :owner)`,
+  readDonateByID: `SELECT * FROM DONATE WHERE ID= :id`,
+  readAllDonate: `SELECT * FROM DONATE`,
+  updateDonateByID: `UPDATE DONATE SET CARD= :card, OWNER= :owner WHERE ID= :id`,
+  deleteDonateByID: `DELETE FROM DONATE WHERE ID= :id`,
 };
 
 const executeSQL = async (query, values) => {
@@ -302,7 +302,7 @@ const executeSQL = async (query, values) => {
   try {
     connection = await mysql.createConnection({
       uri: connectionUrl,
-      password: 'Pro100jeka$',
+      password: '1234567890',
       namedPlaceholders: true
     });
 
@@ -322,8 +322,8 @@ const router = Router();
 router.post('/:id', async (req, res) => {
   try {
     const values = extend({}, req.body, req.params);
-    let result = await executeSQL(sql.createUser, values);
-    result = await executeSQL(sql.readUserByID, req.params);
+    let result = await executeSQL(sql.createDonate, values);
+    result = await executeSQL(sql.readDonateByID, req.params);
     res.status(200).send(result);
   } catch (err) {
     return res.status(500).send({
@@ -335,7 +335,7 @@ router.post('/:id', async (req, res) => {
 
 router.get('/', async (req, res) => {
   try {
-    const result = await executeSQL(sql.readAllUser);
+    const result = await executeSQL(sql.readAllDonate);
     res.status(200).send(result);
   } catch (err) {
     return res.status(500).send(err.toString());
@@ -344,7 +344,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
-    const result = await executeSQL(sql.readUserByID, req.params);
+    const result = await executeSQL(sql.readDonateByID, req.params);
     res.status(200).send(result);
   } catch (err) {
     return res.status(500).send(err.toString());
@@ -354,8 +354,8 @@ router.get('/:id', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const values = extend({}, req.body, req.params);
-    let result = await executeSQL(sql.updateUserByID, values);
-    result = await executeSQL(sql.readUserByID, req.params);
+    let result = await executeSQL(sql.updateDonateByID, values);
+    result = await executeSQL(sql.readDonateByID, req.params);
     res.status(200).send(result);
   } catch (err) {
     return res.status(500).send(err.toString());
@@ -364,8 +364,8 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
-    const result = await executeSQL(sql.readUserByID, req.params);
-    await executeSQL(sql.deleteUserByID, req.params);
+    const result = await executeSQL(sql.readDonateByID, req.params);
+    await executeSQL(sql.deleteDonateByID, req.params);
     res.status(200).send(result);
   } catch (err) {
     return res.status(500).send(err.toString());
