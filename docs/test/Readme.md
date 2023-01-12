@@ -1,30 +1,30 @@
 # Тестування працездатності системи
 
 ## Запуск сервера на 7777 порті
-![](./screens/loading_server.png)
+![](../docs/test/screens/loading_server.png)
 
 ## Перевірка поточної бази даних (Get)
-![](./screens/get.png)
+![](../docs/test/screens/get.png)
 
 ## Додавання сутності (Create)
 
 ### Створення нової сутність з унікальним id
-![](./screens/get_addnew.png)
+![](../docs/test/screens/get_addnew.png)
 ### Спроба створити сутність з id, яке вже зайняте
-![](./screens/get_addold.png)
+![](../docs/test/screens/get_addold.png)
 ### Перевірка
-![](./screens/get_all.png)
+![](../docs/test/screens/get_all.png)
 
 ## Зміна параметрів сутності (Put)
 
 ### Зміна параметрів сутності
-![](./screens/change.png)
+![](../docs/test/screens/change.png)
 ### Перевірка
-![](./screens/get_all_change.png)
+![](../docs/test/screens/get_all_change.png)
 
 ## Видалення сутності (Delete)
 
 ### Видалення сутності
-![](./screens/delete.png)
+![](../docs/test/screens/delete.png)
 ### Перевірка
-![](./screens/get_all_delete.png)
+![](../docs/test/screens/get_all_delete.png)
